@@ -8,15 +8,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectDB {
-
 	private static ConnectDB connDB;
 	private Properties connectParams;
-	
 
 	private ConnectDB() {
-
 		connectParams = new Properties();
-
 		InputStream propsFile = ConnectDB.class.getClassLoader().getResourceAsStream("config.properties");
 		try {
 			connectParams.load(propsFile);
@@ -24,22 +20,20 @@ public class ConnectDB {
 			e.printStackTrace();
 		}
 
-
 	};
 
 	public static synchronized ConnectDB getConnectionDB() {
-		
+
 		if (connDB == null) {
 			connDB = new ConnectDB();
 		}
-		
+
 		return connDB;
 	}
 
 	public Connection getConnection() {
 
 		Connection conn = null;
-		
 
 		String endpoint = connectParams.getProperty("db.url");
 		String username = connectParams.getProperty("db.user");
