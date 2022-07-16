@@ -18,33 +18,45 @@ public class ObjectTesting {
 		
 		
 		TestModel testObj = new TestModel();
-		//testObj.setName("Tony Wiedman");
-		//testObj.setPosition("3B/SS");
-		//testObj.setDebut("04/10/2022");
+		
+		// For Inserting and Update Testing
+		//--
+		//testObj.setName("Prince Fielder");
+		//testObj.setPosition("1B/DH");
+		//testObj.setDebut("06/16/2005");
 		//testObj.setAverage(0.348);
-		//testObj.setHomeruns(47);
-		//testObj.setRbi(115);
+		//testObj.setHomeruns(14);
+		//testObj.setRbi(42);
 		//testObj.setActive(false);
-		testObj.setId(2);
 		
-		Object returnObj  = orm.selectByIdQuery("players.player", testObj);
+		
+		// For Retrieval Resting
+		testObj.setId(5);
+		
+		
+		// Test Method
+		Object returnObj  = orm.selectObjId("players.player", testObj);
 
-		
+		// JSON testing
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(returnObj);
 		
+		
+		// Out the results
 		System.out.println(json);
+		System.out.println(returnObj);
 		
 		
+		logger.log("-- Object Testing End --", LoggingLevel.INFO);
 		
-		logger.log("Test model assigned example field values", LoggingLevel.INFO);
 		
-		//Test some queries	
-		//orm.insertQuery("recipe.cook", testObj);
-		//orm.selectByIdQuery("recipe.cook", testObj);
-		//orm.updateQuery("recipe.cook", testObj);
-		//orm.deleteQuery("recipe.cook", testObj);
-		logger.log("Example query strings have been output", LoggingLevel.INFO);
+		// ORM Methods ("table", object)
+		//-------------------------------------------
+		//orm.insertObj("players.player", testObj);
+		//orm.selectObjId("players.player", testObj);
+		//orm.selectAllSQL("players.player", testObj);
+		//orm.updateObj("players.player", testObj);
+		//orm.deleteObj("players.player", testObj);
 	}
 
 }
