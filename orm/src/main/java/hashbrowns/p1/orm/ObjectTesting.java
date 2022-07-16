@@ -34,7 +34,7 @@ public class ObjectTesting {
 		testObj.setId(5);
 		
 		
-		// Test Method
+		// Test Method and Return Object
 		Object returnObj  = orm.selectObjId("players.player", testObj);
 
 		// JSON testing
