@@ -1,7 +1,6 @@
 package hashbrowns.p1.orm;
 
-import hashbrowns.p1.orm.annotations.id;
-import hashbrowns.p1.orm.annotations.ignore;
+import hashbrowns.p1.orm.annotations.*;
 
 public class TestModel {
 
@@ -100,6 +99,9 @@ public class TestModel {
 		this.active = active;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "[id=" + id + ", name=" + name + ", position=" + position + ", debut=" + debut + ", average=" + average +", homeruns=" + homeruns + ", rbi=" + rbi + ", active=" + active +"]";
+	}
 
 }

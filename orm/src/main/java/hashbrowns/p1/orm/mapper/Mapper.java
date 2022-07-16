@@ -1,12 +1,19 @@
 package hashbrowns.p1.orm.mapper;
 
+import java.util.List;
+
 public interface Mapper {
 
-	public Object insertQuery(String table, Object object);
+	Object selectObjId(String table, Object object) throws Exception;
 
-	public Object selectByIdQuery(String table, Object object) throws Exception;
+	Object insertObj(String table, Object object);
 
-	public Object updateQuery(String table, Object object) throws Exception;
+	Object updateObj(String table, Object object) throws Exception;
 
-	public Object deleteQuery(String table, Object object) throws Exception;
+	Object deleteObj(String table, Object object) throws IllegalArgumentException, IllegalAccessException;
+
+	<T> List<T> selectAllSQL(String table, Object object) throws Exception;
+
+
+	
 }
