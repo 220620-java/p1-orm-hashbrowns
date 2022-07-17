@@ -13,11 +13,11 @@ public class ObjectTesting {
 	public static void main(String[] args) throws Exception {
 		
 		// Instantiate the ORM and Test Model
-		Orm orm = new Orm();
+		OrmExec orm = new OrmExec();
 		
 		
 		
-		TestModel testObj = new TestModel();
+		PlayerModel testObj = new PlayerModel();
 		
 		// For Inserting and Update Testing
 		//--

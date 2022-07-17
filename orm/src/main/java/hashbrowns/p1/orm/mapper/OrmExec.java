@@ -21,7 +21,7 @@ import hashbrowns.p1.orm.utils.LoggingLevel;
 import hashbrowns.p1.orm.annotations.id;
 import hashbrowns.p1.orm.annotations.ignore;
 
-public class Orm implements OrmService {
+public class OrmExec implements OrmService {
 	//
 	private static Logger logger = Logger.getLogger();
 	private ConnectDB connUtil = ConnectDB.getConnectionDB();

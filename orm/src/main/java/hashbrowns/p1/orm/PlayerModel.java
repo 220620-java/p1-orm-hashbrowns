@@ -2,7 +2,7 @@ package hashbrowns.p1.orm;
 
 import hashbrowns.p1.orm.annotations.*;
 
-public class TestModel {
+public class PlayerModel {
 
 	@id
 	private int id;
@@ -15,7 +15,7 @@ public class TestModel {
 	private boolean active;
 
 
-	public TestModel() {
+	public PlayerModel() {
 		
 	}
 
